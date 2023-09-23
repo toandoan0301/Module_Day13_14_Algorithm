@@ -5,8 +5,8 @@ import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        int[] numbers1 = new int[]{8, 8, 8, 8, 4, 8};
-        int[] numbers2 = new int[]{8, 3, 8, 8, 8, 4, 7};
+        int[] numbers1 = new int[]{8, 5, 7, 4, 8};
+        int[] numbers2 = new int[]{8, 3, 9, 8, 8, 4, 7};
 //        if (checkAinB(numbers1, numbers2)) {
 //            System.out.println("phần tử trong mảng 1 có trong mảng 2");
 //        } else {
@@ -60,7 +60,7 @@ public class Main {
                     if (map.containsKey(j)) {
                         continue;
                     }
-                    map.put(j, array[j]);
+                    map.put(j, array[i]);
                     count++;
                     flag=true;
                 }
