@@ -29,7 +29,7 @@ public class Main {
         return !flag;
     }
 
-    public static boolean checkAinB(int[] array, int[] array2) {
+    public static boolean checkElementInArray(int[] array, int[] array2) {
         boolean flag;
         if (array.length > array2.length) {
             return false;
@@ -54,24 +54,20 @@ public class Main {
         boolean flag;
         Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < array.length; i++) {
+            flag = false;
             for (int j = 0; j < array2.length; j++) {
                 if (array[i] == array2[j]) {
-                    flag = true;
-                    for (Integer key : map.keySet()) {
-                        if (map.get(key) == array[j] && key == j) {
-                            flag = false;
-                            continue;
-                        }
-                        flag=true;
+                    if (map.containsKey(j)) {
+                        continue;
                     }
-                    if (flag) {
-                        map.put(j, array[j]);
-                        count++;
-                        break;
-                    }
+                    map.put(j, array[j]);
+                    count++;
+                    flag=true;
+                }
+                if(flag){
+                    break;
                 }
             }
-
         }
         System.out.println(map);
         return count;
